@@ -11,7 +11,7 @@
 }>
     <h1 class="font-medium">
         <b class="font-bold poppins text-white opacity-80 text-xl">Alan</b></h1>
-    <div class="sm:flex items-center gap-4 hidden font-bold  ">
+    <div class="sm:flex items-center gap-4 hidden font-bold  text-violet-400">
         {#each tabs as tab}
             <a href={tab.link} class="duration-200 hover:text-violet-400 ">
                 <p>{tab.name}</p>
