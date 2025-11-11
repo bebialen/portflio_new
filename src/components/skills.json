@@ -1,0 +1,29 @@
+
+
+{
+
+    "skills":{
+
+        "dev":{
+            "mobileApp":[
+                "flutter","kotlin"
+            ],
+            "web":[
+                "reactJS","Angular"
+            ],
+            "AI/ML":[
+
+                "Nlp",
+                "Computer Vision"
+
+            ]
+        }, 
+
+        "music production":{
+            "daw":[
+                "FLstudio", "Garageband Mobile"
+            ]
+            
+        }
+    }
+}
