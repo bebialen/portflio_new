@@ -2,55 +2,58 @@
   import { onMount } from "svelte";
   import Step from "./Step.svelte";
   import ProjectsCarousal from "./ProjectsCarousal.svelte";
+  import { ChevronLeft, Settings } from "lucide-svelte";
+
   import * as Alert from "$lib/components/ui/alert";
   import { Motion } from "svelte-motion";
   import GitHubContrib from "./GitHubContrib.svelte";
   import Projects from "./ProjectsCarousal.svelte";
   import ProfessionalExperience from "./ProfessionalExperience.svelte";
+    import AppUi from "./AppUi.svelte";
 
-//   import pkg from "@rive-app/canvas";
+  //   import pkg from "@rive-app/canvas";
 
-// let canvas;
-// let riveInstance;
+  // let canvas;
+  // let riveInstance;
 
-// onMount(async () => {
-//   console.log("mounted");
-  
-//   try {
-//     // Dynamic import inside onMount
-//     const riveModule = await import("@rive-app/canvas");
-//     console.log("Rive module:", riveModule);
-    
-//     // Try to access Rive from the module
-//     const Rive = riveModule.default || riveModule.Rive;
-    
-//     if (!Rive) {
-//       console.error("Could not find Rive constructor in module:", riveModule);
-//       return;
-//     }
-    
-//     riveInstance = new Rive({
-//       src: "/assets/animations/tabbar_anime1.riv",
-//       canvas: canvas,
-//       autoplay: true,
-//       stateMachines: ["State Machine 1"],
-//       onLoad: () => {
-//         console.log("✅ Rive loaded successfully");
-//       },
-//       onLoadError: (err) => {
-//         console.error("❌ Rive load error:", err);
-//       }
-//     });
-//   } catch (error) {
-//     console.error("❌ Error loading Rive:", error);
-//   }
-  
-//   return () => {
-//     if (riveInstance) {
-//       riveInstance.cleanup();
-//     }
-//   };
-// });
+  // onMount(async () => {
+  //   console.log("mounted");
+
+  //   try {
+  //     // Dynamic import inside onMount
+  //     const riveModule = await import("@rive-app/canvas");
+  //     console.log("Rive module:", riveModule);
+
+  //     // Try to access Rive from the module
+  //     const Rive = riveModule.default || riveModule.Rive;
+
+  //     if (!Rive) {
+  //       console.error("Could not find Rive constructor in module:", riveModule);
+  //       return;
+  //     }
+
+  //     riveInstance = new Rive({
+  //       src: "/assets/animations/tabbar_anime1.riv",
+  //       canvas: canvas,
+  //       autoplay: true,
+  //       stateMachines: ["State Machine 1"],
+  //       onLoad: () => {
+  //         console.log("✅ Rive loaded successfully");
+  //       },
+  //       onLoadError: (err) => {
+  //         console.error("❌ Rive load error:", err);
+  //       }
+  //     });
+  //   } catch (error) {
+  //     console.error("❌ Error loading Rive:", error);
+  //   }
+
+  //   return () => {
+  //     if (riveInstance) {
+  //       riveInstance.cleanup();
+  //     }
+  //   };
+  // });
   //TODO:Create a priority queuse for latest projects
 
   let steps = [
@@ -80,22 +83,22 @@
       },
     },
 
-    {
-      name: "Block Breaker Game",
-      tagline: "Classic Block Breaker Game- Deployed in vercel",
-      icon: "fa-solid fa-gamepad",
-      description: "A 2D puzzle game built using Flutter & Flame engine",
-      role: "Flutter Game Developer",
-      imageUrl: "",
-      tech: ["Flutter", "Flame Engine", "vercel", "Collision detection"],
-      year: "2025",
-      links: {
-        github: "https://github.com/bebialen/block_breaker",
-        playstore: "",
-        web: "https://block-breaker-six.vercel.app/",
-        demo: "",
-      },
-    },
+    // {
+    //   name: "Block Breaker Game",
+    //   tagline: "Classic Block Breaker Game- Deployed in vercel",
+    //   icon: "fa-solid fa-gamepad",
+    //   description: "A 2D puzzle game built using Flutter & Flame engine",
+    //   role: "Flutter Game Developer",
+    //   imageUrl: "",
+    //   tech: ["Flutter", "Flame Engine", "vercel", "Collision detection"],
+    //   year: "2025",
+    //   links: {
+    //     github: "https://github.com/bebialen/block_breaker",
+    //     playstore: "",
+    //     web: "https://block-breaker-six.vercel.app/",
+    //     demo: "",
+    //   },
+    // },
     {
       name: "Eduplay",
       tagline:
@@ -200,7 +203,7 @@
   };
 </script>
 
-<main class="flex flex-col flex-1 p-4">
+<main class="flex flex-col flex-1 p-12">
   <section
     id="intropage"
     class="grid grid-cols-1 lg:grid-cols-2 gap-10 py-8 sm:py-14"
@@ -209,17 +212,24 @@
       class="flex flex-col lg:justify-center text-center lg:text-left gap-6 md:gap-8
       lg:gap-10"
     >
-      <h2 class="font-semibold text-4xl sm:text-5xl md text-6xl text-white">
+      <h2 class="font-semibold text-4xl sm:text-5xl md text-white">
         Hi! I’m <span class="text-violet-400">{profile.name}</span> <br />
         {profile.title}<span class="text-violet-400"
           >{profile.secondaryTitle}</span
         >
       </h2>
 
-      <p class="text-base sm:text-lg md:text-xl text-white">
+      <!-- <p class="text-base sm:text-lg md:text-xl text-white">
         I specialize in&nbsp;
         <span class="text-violet-400">{profile.favoriteTech.join(", ")}</span>
-      </p>
+      </p> -->
+      <div
+        id="aboutMe"
+        class="text-3xl font-bold bg-gradient-to-r from-white to-fuchsia-500 bg-clip-text text-transparent"
+      >
+        with 1.7 years of experience in building seamless Android & iOS
+        experiences.
+      </div>
 
       <a
         class="blueShadow mx-auto lg:mr-auto text-base sm:text-lg md:text-xl relative overflow-hidden
@@ -245,24 +255,25 @@
       </div>
     </div> -->
 
-
     <!-- //implement a img in here  -->
-     <!-- <div class="relative shadow-2xl grid place-items-center">
+    <!-- <div class="relative shadow-2xl grid place-items-center">
                 <img src={"/assets/images/profile_2.png"} alt="profile" class="object-cover z-[2] max-h[70vh]">
             </div> -->
+    
+    <AppUi></AppUi>
 
     
+    <div
+      class="absolute right-0 top-20 w-[350px] h-[350px] bg-violet-500/20 blur-3xl rounded-full"
+    ></div>
   </section>
-  //about me 
-  <!-- <div 
-  id="aboutMe" 
-  class="text-3xl font-bold bg-gradient-to-r from-violet-400 to-fuchsia-500 bg-clip-text text-transparent"
->
-  A Mobile App Developer with 1.7 years of experience building seamless Android & iOS experiences.
-</div> -->
+  <!-- //Experience section  -->
+  <section>
+    <ProfessionalExperience />
+  </section>
 
   <section id="projects" class="py-20 lg:py-32 flex flex-col gap-24">
-    <div class="flex flex-col gap-2 text-center">
+    <!-- <div class="flex flex-col gap-2 text-center">
       <h6 class="text-large sm:text-xl md:text-2xl text-white">
         A few of my creative endeavours
       </h6>
@@ -270,9 +281,10 @@
       <h3 class="font -semibold texr-3xl sm:txt-4xl md:text-5xl text-white">
         Curious to <span class="text-violet-400">see</span> my work?
       </h3>
-    </div>
+    </div> -->
 
     <section>
+      <h2 class="text-3xl font-bold text-white mb-8">My Projects</h2>
       <ProjectsCarousal {steps} />
     </section>
 
@@ -293,133 +305,4 @@
     <GitHubContrib />
   </section>
   <!-- PROFESSIONAL EXPERIENCE -->
-
-  <section>
-    <ProfessionalExperience />
-  </section>
-
-  <section
-    id="about"
-    class=" py-0 pt-10 lg:pt-16 lg:py-32 flex flex-col gap-16 sm:gap-20 md:gap-24 relative"
-  >
-    <div>
-      <div class="flex flex-col gap-2 text-center relative">
-        <!-- Subtitle -->
-        <h6 class="text-7xl py-7 text-white">Want to Know more</h6>
-
-        <!-- Main Heading with Typewriter Effect -->
-        <h1 class="text-white text-4xl font-bold">
-          <span
-            class="poppins text-violet-700 sm:text-7xl inline-block overflow-hidden border-r-4 border-white whitespace-nowrap animate-typewriter"
-          >
-            A b o u t M e .. ??
-          </span>
-        </h1>
-      </div>
-
-      <!-- Tailwind Typewriter Animation -->
-      <style>
-        @keyframes typewriter {
-          from {
-            width: 0;
-          }
-          to {
-            width: 100%;
-          }
-        }
-
-        @keyframes blink {
-          50% {
-            border-color: transparent;
-          }
-        }
-
-        .animate-typewriter {
-          animation:
-            typewriter 3s steps(30, end) 1s 1 normal both,
-            blink 0.5s step-end infinite;
-        }
-      </style>
-    </div>
-    <p class="mx-auto font-christian font-semibold text-lg sm:text-4xl">
-      Iam...
-    </p>
-    <div class="flex flex-col gap-20 w-full mx-auto max-w-[800px]">
-      {#each benefits as benefit, index}
-        <div class="flex gap-6 sm:gap-8">
-          <p
-            class="font-extrabold text-4xl text-7xl md:text-6l text-slate-500 font-semibold"
-          >
-            0{index + 1}
-          </p>
-          <div class="flex flex-col gap-6 sm:gap8">
-            <h3
-              class="text-2xl sm:text-3xl md:text-5xl font-semibold text-violet-400"
-            >
-              {benefit.name}
-            </h3>
-            <p class="text-slate-300">{benefit.description}</p>
-          </div>
-        </div>
-      {/each}
-    </div>
-    <div>
-      <div class="flex flex-col gap-0 text-center">
-        <!-- Subtitle -->
-
-        <!-- Main Heading with Typewriter Effect -->
-        <h1 class="text-white font-bold">
-          <span
-            class="poppins text-violet-400 sm:text-2xl inline-block overflow-hidden border-r-4 border-white whitespace-nowrap animate-typewriter"
-          >
-            <code>&nbsp;--My Skills--&nbsp</code>
-          </span>
-        </h1>
-      </div>
-    </div>
-    <Alert.Root>
-      <Alert.Title>My skills</Alert.Title>
-
-      <Alert.Description>
-        <Alert.Root>
-          <Alert.Title></Alert.Title>
-          <Alert.Description>
-            <div class="flex flex-wrap gap-3 text-center mt-5">
-              <!-- Skill Pills -->
-              <span
-                class="px-4 py-2 text-white text-sm sm:text-md rounded-full border border-gradient-to-r from-emerald-400 via-emerald-500 to-emerald-600"
-              >
-                Flutter
-              </span>
-              <span
-                class="px-4 py-2 text-white text-sm sm:text-md rounded-full border border-gradient-to-r from-emerald-400 via-emerald-500 to-emerald-600"
-              >
-                React
-              </span>
-              <span
-                class="px-4 py-2 text-white text-sm sm:text-md rounded-full border border-gradient-to-r from-emerald-400 via-emerald-500 to-emerald-600"
-              >
-                Next.js
-              </span>
-              <span
-                class="px-4 py-2 text-white text-sm sm:text-md rounded-full border border-gradient-to-r from-emerald-400 via-emerald-500 to-emerald-600"
-              >
-                MongoDB
-              </span>
-              <span
-                class="px-4 py-2 text-white text-sm sm:text-md rounded-full border border-gradient-to-r from-emerald-400 via-emerald-500 to-emerald-600"
-              >
-                Node.js
-              </span>
-              <span
-                class="px-4 py-2 text-white text-sm sm:text-md rounded-full border border-gradient-to-r from-emerald-400 via-emerald-500 to-emerald-600"
-              >
-                Machine Learning
-              </span>
-            </div>
-          </Alert.Description>
-        </Alert.Root>
-      </Alert.Description>
-    </Alert.Root>
-  </section>
 </main>

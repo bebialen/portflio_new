@@ -12,7 +12,9 @@
   }
 </script>
 
-<section class="relative py-8">
+<div class="relative py-8">
+
+  
   <button
     on:click={scrollLeft}
     class="hidden lg:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-violet-500 text-white p-3 rounded-full shadow-lg hover:bg-violet-600"
@@ -108,7 +110,7 @@
   >
     →
   </button>
-</section>
+</div>
 
 <style>
   .scrollbar-hide::-webkit-scrollbar {
