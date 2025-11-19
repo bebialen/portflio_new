@@ -260,7 +260,7 @@
                 <img src={"/assets/images/profile_2.png"} alt="profile" class="object-cover z-[2] max-h[70vh]">
             </div> -->
     
-    <AppUi></AppUi>
+    <AppUi ></AppUi>
 
     
     <div

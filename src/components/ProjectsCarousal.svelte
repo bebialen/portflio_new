@@ -31,13 +31,13 @@
         class="card bg-base-100 w-80 shadow-xl snap-center shrink-0 rounded-2xl overflow-hidden relative"
       >
         <figure class="relative">
-          <img
+          <!-- <img
             src={Array.isArray(step.images)
               ? step.images[0]
               : step.images || "/assets/images/parkochi_screen_0.png"}
             alt={step.name}
             class="object-cover w-full h-44 rounded-t-2xl"
-          />
+          /> -->
 
           <!-- GitHub icon button on image -->
           {#if step.links?.github}
