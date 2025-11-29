@@ -3,6 +3,7 @@
   import Step from "./Step.svelte";
   import ProjectsCarousal from "./ProjectsCarousal.svelte";
   import { ChevronLeft, Settings } from "lucide-svelte";
+  import { browser } from '$app/environment';
 
   import * as Alert from "$lib/components/ui/alert";
   import { Motion } from "svelte-motion";
@@ -260,7 +261,11 @@
                 <img src={"/assets/images/profile_2.png"} alt="profile" class="object-cover z-[2] max-h[70vh]">
             </div> -->
     
-    <AppUi ></AppUi>
+  <div>
+    {#if browser}
+    <AppUi/>
+  {/if}
+  </div>
 
     
     <div

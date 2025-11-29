@@ -1,5 +1,8 @@
 <script>
   import { onMount, onDestroy } from "svelte";
+  import { browser } from '$app/environment';
+  
+
 
   let root;
   let card;
@@ -8,11 +11,15 @@
   let layer3;
   let avatar;
   let shadow;
+  // let window;
 
   let prefersReduced = false;
 
   onMount(() => {
-    if (typeof window === "undefined") return;
+
+    console.log("mounted")
+    if (!browser) return;
+    
 
     prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
